@@ -1,0 +1,97 @@
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      	<div class="col-sm-2" ng-repeat="stat in stats">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+              	<img src="img/people.png">
+                <p>{{stat.name}}</p>               
+              </div>
+              <div class="panel-footer">
+                <a href="#/customerorders/{{customer.id}}" class="cardBody btn-link">View {{ stat.points }} Orders</a>    
+              </div>
+            </div>  
+        </div>
+      </div>   
+      
+        
+          <h2>Roster</h2>
+          <div class="panel panel-default">
+	          <table class="table table-striped">
+		          <thead>
+		            <tr>
+		              <th>Number</th>
+		              <th>Name</th>
+		              <th>Position</th>
+		              <th>Age</th>
+		              <th>Height</th>
+		              <th>Hometown</th>
+		            </tr>
+		          </thead>
+		          <tbody>
+		            <tr ng-repeat="player in players">
+		              <td>{{player.number}}</td>
+		              <td>{{player.name}}</td>
+		              <td>{{player.position}}</td>
+		              <td>{{player.age}}</td>
+		              <td>{{player.height}}</td>
+		              <td>{{player.hometown}}</td>
+		            </tr>
+		          </tbody>
+		      </table>
+	      </div>
+	      <hr>
+	      <h2>Scores and Schedule</h2>
+	      <div lass="panel panel-default" ng-repeat="score in scores">
+	      	<div class="panel-heading">
+                <p>{{score.gameDate}}</p>               
+            </div>
+	      	<table class="table">
+	      		<thead>
+	      			<tr>
+	      				<th>Opponent</th>
+	      				<th>Results</th>
+	      			</tr>
+	      		</thead>
+	      		<tbody>
+	      			<tr>
+	      				<td>
+	      					<p>{{score.opponent}}<p>	
+	      				</td>
+	      				<td>
+	      					<p>{{score.result}}</p>
+	      				</td>
+	      			</tr>
+	      		</tbody>
+	      	</table>
+	      </div>
+	      <hr>
+	      <h2>Stats</h2>
+          <div class="panel panel-default">
+		      <table class="table table-striped">
+		          <thead>
+		            <tr>
+		              <th>Name</th>
+		              <th>Points</th>
+		              <th>Rebounds</th>
+		              <th>Assists</th>
+		              <th>Blocks</th>
+		              <th>Steals</th>
+		            </tr>
+		          </thead>
+		          <tbody>
+		            <tr ng-repeat="stat in stats">
+		              <td>{{stat.name}}</td>
+		              <td>{{stat.points}}</td>
+		              <td>{{stat.rebounds}}</td>
+		              <td>{{stat.assists}}</td>
+		              <td>{{stat.blocks}}</td>
+		              <td>{{stat.steals}}</td>
+		            </tr>
+		          </tbody>
+		      </table>
+      	  </div>  
+        
+    </div>
+<!-- -->
+

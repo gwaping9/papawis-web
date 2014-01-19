@@ -1,0 +1,47 @@
+<div class="container" ng-controller="GameLogCtrl">
+  <div class="box">    
+    <div class="panel panel-default" ng-repeat="game in gamelog">
+        <div class="panel-heading">
+            <h3 class="panel-title">Team {{game.team.teamName}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>PLAYER</th>
+                        <th><a href="" ng-click="predicate = rebounds; reverse=!reverse">REBS</th>
+                        <th><a href="" ng-click="predicate = assists; reverse=!reverse">ASTS</th>
+                        <th><a href="" ng-click="predicate = 'blocks'; reverse=!reverse">BLKS</th>
+                        <th><a href="" ng-click="predicate = 'steals'; reverse=!reverse">STLS</th>
+                        <th><a href="" ng-click="predicate = 'points'; reverse=!reverse">PTS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="stat in game.player | orderBy:predicate:reverse">
+                        <td>{{stat.playerName}}</td>
+                        <td>{{stat.rebounds}}</td>
+                        <td>{{stat.assists}}</td>
+                        <td>{{stat.blocks}}</td>
+                        <td>{{stat.steals}}</td>
+                        <td>{{stat.points}}</td>
+                    </tr>
+                    </tbody>
+                    <!--
+                    <tfoot>
+                    <tr>
+                        <td>Totals: </td>
+                        <td>{{stat|sumByCol:'rebounds'}}</td>
+                        <td>{{stat|sumByCol:'assists'}}</td>
+                        <td>{{stat|sumByCol:'blocks'}}</td>
+                        <td>{{stat|sumByCol:'steals'}}</td>
+                        <td>{{stat|sumByCol:'points'}}</td>
+                    </tr>    
+                    </tfoot>
+                    -->
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>    
+</div>

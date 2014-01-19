@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="box">
+    <h2>Roster</h2>
+    <div class="panel panel-default">
+    	<div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Position</th>
+                <th>Height</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="player in players">
+                <td>{{player.playerID.name}}</td>
+                <td>{{player.playerID.number}}</td>
+                <td>{{player.playerID.position}}</td>
+                <td>{{player.playerID.height}}</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>  
+    </div>	
+  </div>
+</div>

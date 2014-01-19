@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="box">  
+    <h2>Standings</h2>
+    <div class="panel panel-default">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Team</th>
+                    <th>Win</th>
+                    <th>Loss</th>
+                    <th>Points Scored</th>
+                    <th>Points Allowed</th>
+                    <th>Diff</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="record in standings">
+                    <td>{{record.rank}}</td>
+                    <td>{{record.teamName}}</td>
+                    <td>{{record.win}}</td>
+                    <td>{{record.loss}}</td>
+                    <td>{{record.pointsScored}}</td>
+                    <td>{{record.pointsAllowed}}</td>
+                    <td>{{record.diff}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>    
+</div>
