@@ -8,6 +8,7 @@ var mongoose = require( 'mongoose' );
 var Team = mongoose.model( 'Team' );
 
 exports.getTeams = function(req, res) {
+    Console.log("Server getTeams");
     Team
         .find()
         .lean()
@@ -24,7 +25,7 @@ exports.getTeams = function(req, res) {
                        hometown: team.hometown,
                        logo: team.logo
                     });
-                })
+                });
                 res.json(outTeams);
             }
         });
