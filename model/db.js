@@ -7,13 +7,14 @@ var mongoose = require( 'mongoose' );
 // Build the connection string
 //var dbURI = 'mongodb://localhost/papawis';
 var dbHost = 'ds061318.mongolab.com';
-var dbURI = 'mongodb://papawislang:pagmaytime@ds061318.mongolab.com:61318/papawis';
+var dbURI = process.env.MONGOLAB_URI ||
+'mongodb://mongodb://localhost/papawis';
 
 // Create the database connection
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {
-    console.log('Mongoose connected to ' + dbHost);
+    console.log('Mongoose connected to MongoDB');
 });
 
 mongoose.connection.on('error',function (err) {
