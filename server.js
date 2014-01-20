@@ -20,6 +20,7 @@ app.get('/gamelog/:gameID', gamelog.getGamelogs);
 app.get('/players/:teamID', roster.getPlayers);
 app.get('/playerstats/:teamID', playerstats.getPlayerStats);
 
-//app.listen(3000);
-app.listen(process.env.PORT || 3000);
-console.log('Listening on port 3000...');
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
