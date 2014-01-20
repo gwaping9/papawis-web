@@ -8,7 +8,7 @@ var mongoose = require( 'mongoose' );
 var Team = mongoose.model( 'Team' );
 
 exports.getTeams = function(req, res) {
-    Console.log("Server getTeams");
+    console.log("Server getTeams");
     Team
         .find()
         .lean()

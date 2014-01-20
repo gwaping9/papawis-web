@@ -3,35 +3,35 @@
 angular.module('myApp.restServices', ['ngResource'])
     .factory('Players', ['$resource',
         function ($resource) {
-            return $resource('http://localhost:3000/players/:teamID', {});
+            return $resource('/players/:teamID', {});
         }])
 
     .factory('Schedule', ['$resource',
         function ($resource) {
-            return $resource('http://localhost:3000/schedule', {});
+            return $resource('/schedule', {});
         }])
 
     .factory('Gamelog', ['$resource',
         function ($resource) {
-            return $resource('http://localhost:3000/gamelog/:gameID', {});
+            return $resource('/gamelog/:gameID', {});
         }])
 
     .factory('Standing', ['$resource',
         function ($resource) {
-            return $resource('http://localhost:3000/standings', {});
+            return $resource('/standings', {});
         }])
 
     .factory('Teams', ['$resource',
         function ($resource) {
-            return $resource('http://localhost:3000/teams', {});
+            return $resource('/teams', {});
         }])
 
     .factory('Playerstats', ['$resource',
         function ($resource) {
-            return $resource('http://localhost:3000/playerstats/:teamID', {});
+            return $resource('/playerstats/:teamID', {});
         }])
 
     .factory('Games', ['$resource',
         function ($resource) {
-            return $resource('http://localhost:3000/games/:teamID', {});
+            return $resource('/games/:teamID', {});
         }]);
