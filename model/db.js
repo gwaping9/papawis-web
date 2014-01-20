@@ -7,8 +7,8 @@ var mongoose = require( 'mongoose' );
 // Build the connection string
 //var dbURI = 'mongodb://localhost/papawis';
 var dbHost = 'ds061318.mongolab.com';
-var dbURI = process.env.MONGOLAB_URI ||
-'mongodb://mongodb://localhost/papawis';
+var dbURI = process.env.MONGOLAB_URI;
+//'mongodb://mongodb://localhost/papawis';
 
 // Create the database connection
 mongoose.connect(dbURI);
