@@ -66,6 +66,11 @@ angular.module('myApp.controllers', []).
     $scope.reverse = true;
 
   }])
+  .controller('LeadersCtrl', ['$scope', 'Leaders', function($scope, Leaders) {
+    console.log("Leaders");
+    $scope.leaders = Leaders.query();
+
+  }])
   .controller('TeamsCtrl', ['$scope', 'Teams',  function($scope, Teams) {
   	console.log("Team");
   	$scope.teams = Teams.query();

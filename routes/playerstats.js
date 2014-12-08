@@ -6,6 +6,7 @@ var Playerstat = mongoose.model( 'Playerstat' );
 
 exports.getPlayerStats = function(req, res) {
     var teamID = parseInt(req.params.teamID);
+    console.log("getPlayerStats");
     Playerstat
         .find({teamID: teamID})
         .populate('playerID')
@@ -14,7 +15,7 @@ exports.getPlayerStats = function(req, res) {
             if (err) {
                 console.log("error" +err);
             } else {
-                //console.log(players);
+                console.log(players);
                res.json(players);
             }
         });

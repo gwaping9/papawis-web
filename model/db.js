@@ -105,12 +105,15 @@ mongoose.model('Player', playerSchema);
 var playerStatSchema = new mongoose.Schema({
     playerID: {type: String, ref: 'Player'},
     leagueID: String,
-    teamID: Number,
+    teamID: {type: Number, ref: 'Team'},
     points: Number,
     rebounds: Number,
     assists: Number,
     blocks: Number,
     steals: Number,
+    fts: Number,
+    fg2: Number,
+    fg3: Number,
     gamesPlayed: Number
 
 });

@@ -6,6 +6,7 @@ var express = require('express'),
     gamelog = require('./routes/gamelog'),
     roster = require('./routes/roster'),
     playerstats = require('./routes/playerstats'),
+    leaders = require('./routes/leaders'),
     path = require('path');
 
 
@@ -19,6 +20,7 @@ app.get('/teams', teams.getTeams);
 app.get('/gamelog/:gameID', gamelog.getGamelogs);
 app.get('/players/:teamID', roster.getPlayers);
 app.get('/playerstats/:teamID', playerstats.getPlayerStats);
+app.get('/leaders', leaders.getPlayerPts);
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {

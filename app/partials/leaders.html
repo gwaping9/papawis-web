@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="box">
+    <h2>Top League Scorers</h2>
+    <div class="panel panel-default">
+    	<div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Games played</th>
+                <th>Team</th>
+                <th>Points</th>
+                <!--
+                <th><a href="" ng-click="predicate = avgPoints; klik='pts'; reverse=!reverse">PPG</th>
+                 another way of doing the orderby 
+                <th><a href="" ng-click="predicate = 'rebounds / gamesPlayed'; reverse=!reverse">RPG</th>
+                 end
+                <th><a href="" ng-click="predicate = avgPoints; klik='ast'; reverse=!reverse">APG</th>
+                <th><a href="" ng-click="predicate = avgPoints; klik='blk'; reverse=!reverse">BPG</th>
+                <th><a href="" ng-click="predicate = avgPoints; klik='stl'; reverse=!reverse">SPG</th>
+                -->                           
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="player in leaders | orderBy:pts:reverse">
+                <td>{{leaders.indexOf(player)+1}}</td>
+                <td>{{player.playerName}}</td>
+                <td>{{player.gamesPlayed}}</td>
+                <td>{{player.teamName}}</td>
+                <td>{{player.pts | number:2}}</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>  
+    </div>	
+  </div>  
+</div>

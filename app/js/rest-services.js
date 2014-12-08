@@ -31,6 +31,11 @@ angular.module('myApp.restServices', ['ngResource'])
             return $resource('/playerstats/:teamID', {});
         }])
 
+    .factory('Leaders', ['$resource',
+        function ($resource) {
+            return $resource('/leaders', {});
+        }])
+
     .factory('Games', ['$resource',
         function ($resource) {
             return $resource('/games/:teamID', {});
