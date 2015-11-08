@@ -13,7 +13,7 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'})
   $routeProvider.when('/standings', {templateUrl: 'partials/standings.html', controller: 'StandingsCtrl'});
-  $routeProvider.when('/schedule', {templateUrl: 'partials/schedule.html', controller: 'ScheduleCtrl'});
+  $routeProvider.when('/schedule/:gameType', {templateUrl: 'partials/schedule.html', controller: 'ScheduleCtrl'});
   $routeProvider.when('/teams', {templateUrl: 'partials/teams.html', controller: 'TeamsCtrl'});
   $routeProvider.when('/players/:teamID', {templateUrl: 'partials/roster.html', controller: 'PlayersCtrl'});
   $routeProvider.when('/playerstats/:teamID', {templateUrl: 'partials/playerstats.html', controller: 'PlayerStatsCtrl'});

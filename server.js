@@ -15,7 +15,7 @@ app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname, '/app')));
 
 app.get('/standings', standings.getStandings);
-app.get('/schedule', schedule.getGames);
+app.get('/schedule/:gameType', schedule.getGames);
 app.get('/teams', teams.getTeams);
 app.get('/gamelog/:gameID', gamelog.getGamelogs);
 app.get('/players/:teamID', roster.getPlayers);

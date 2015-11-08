@@ -7,7 +7,9 @@ var mongoose = require( 'mongoose' );
 // Build the connection string
 //var dbURI = 'mongodb://localhost/papawis';
 var dbHost = 'ds061318.mongolab.com';
-var dbURI = process.env.PAPAWIS_DB_URI || 'mongodb://localhost/papawis';
+var dbURI = process.env.PAPAWIS_DB_URI 
+// || 'mongodb://papawislang:pagmaytime@ds061318.mongolab.com:61318/papawis'; 
+|| 'mongodb://localhost/papawis';
 
 // Create the database connection
 mongoose.connect(dbURI);
@@ -55,6 +57,7 @@ var gameSchema = new mongoose.Schema({
     awayScore: Number,
     winner: {type: Number, ref: 'Team'},
     venue: String,
+    scorer: String,
     completed: String
 });
 

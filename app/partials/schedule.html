@@ -19,8 +19,8 @@
                     <tr ng-repeat="game in sked.games">
                         <td>{{game.matchup}}</td>
                         <td>{{game.time}}</td>
-                        <td>{{game.venue}}</td>
-                        <td><a href="#/gamelog/{{game.gameID}}">{{game.results}}</a></td>
+                        <td><a ng-href="https://www.google.com/maps/place/St+Brigid+School/@41.7361115,-72.7380012,17z/data=!3m1!4b1!4m2!3m1!1s0x89e7ad19bc9640d7:0x6f9d57901cb54c3">{{game.venue}}</a></td>
+                        <td><a ng-href="#/gamelog/{{game.gameID}}">{{game.results}}</a></td>
                     </tr>
                     </tbody>
                 </table>

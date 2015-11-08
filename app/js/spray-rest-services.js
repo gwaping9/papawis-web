@@ -8,7 +8,7 @@ angular.module('myApp.restServices', ['ngResource'])
 
     .factory('Schedule', ['$resource',
         function ($resource) {
-            return $resource('/schedule/:gameType', {});
+            return $resource('/schedule', {});
         }])
 
     .factory('Gamelog', ['$resource',
@@ -23,7 +23,7 @@ angular.module('myApp.restServices', ['ngResource'])
 
     .factory('Teams', ['$resource',
         function ($resource) {
-            return $resource('/teams', {});
+            return $resource('http://localhost:8080/teams', {});
         }])
 
     .factory('Playerstats', ['$resource',

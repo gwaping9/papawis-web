@@ -26,8 +26,10 @@ exports.getGamesX = function(req, res) {
 };
 
 exports.getGames = function(req, res) {
+    var type = req.params.gameType || 'Y';
+    console.log("schedule: " +type);
     Game
-        .find()
+        .find({regular: type}).sort( { _id: 1 } )
         .populate('home', 'name')
         .populate('winner', 'name')
         .populate('away', 'name')
@@ -74,9 +76,20 @@ var createView = function(games) {
             }
         };
 
+        var home, away;
+
+        if (game.home === null) {
+            home = "TBD";
+            away = "TBD";            
+        } else {
+            home = game.home.name;
+            away = game.away.name;            
+        }
+
+
         s.games.push({
             gameID: game._id,
-            matchup: game.home.name +" vs " +game.away.name,
+            matchup:  home +" vs " +away,
             time: game.time,
             venue: game.venue,
             results: getResults()

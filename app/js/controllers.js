@@ -11,9 +11,9 @@ angular.module('myApp.controllers', []).
     $scope.slides.push({image: 'img/slide-3.jpg'});
 
   }])
-  .controller('ScheduleCtrl', ['$scope', 'Schedule', function($scope, Schedule) {
+  .controller('ScheduleCtrl', ['$scope', '$routeParams', 'Schedule', function($scope, $routeParams, Schedule) {
       console.log("Schedule");
-      $scope.schedule = Schedule.query();
+      $scope.schedule = Schedule.query({gameType: $routeParams.gameType});
   }])
   .controller('GameLogCtrl', ['$scope', '$routeParams', 'Gamelog', function($scope, $routeParams, Gamelog) {
     console.log("Gamelog");

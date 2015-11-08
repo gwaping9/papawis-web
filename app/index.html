@@ -37,9 +37,22 @@
         <ul class="nav navbar-nav">
           <li><a href="#/home">Home</a></li>
           <li><a href="#/standings">Standings</a></li>
-          <li><a href="#/schedule">Schedule</a></li>
+          <li class="dropdown">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Schedule<b class="caret"></b></>
+              <ul class="dropdown-menu">
+                  <li><a href="#/schedule/Y">Regular Season</a></li>
+                  <li><a href="#/schedule/N">Post Season</a></li>
+              </ul>
+          </li>
           <li><a href="#/teams">Teams</a></li>
-          <li><a href="#/leaders">Stats</a></li>           
+          <li><a href="#/leaders">Stats</a></li>
+          <li class="dropdown">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Info<b class="caret"></b></>
+              <ul class="dropdown-menu">
+                  <li><a href="pdf/2016-Papawis-Basketball.pdf">League Rules</a></li>
+                  <li><a href="pdf/papawis-basketball-waiver.pdf">Team Waiver</a></li>
+              </ul>
+          </li>               
         </ul>  
       </div><!-- /.navbar-collapse -->
     </div>
