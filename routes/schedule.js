@@ -33,6 +33,7 @@ exports.getGames = function(req, res) {
         .populate('home', 'name')
         .populate('winner', 'name')
         .populate('away', 'name')
+        .populate('scorer', 'name')
         .exec(function(err, games) {
             if (err) {
                 console.log("error" +err);
@@ -76,14 +77,16 @@ var createView = function(games) {
             }
         };
 
-        var home, away;
+        var home, away, scorer;
 
         if (game.home === null) {
             home = "TBD";
-            away = "TBD";            
+            away = "TBD";
+            scorer = "TBD"            
         } else {
             home = game.home.name;
-            away = game.away.name;            
+            away = game.away.name; 
+            scorer = game.scorer.name;           
         }
 
 
@@ -92,6 +95,7 @@ var createView = function(games) {
             matchup:  home +" vs " +away,
             time: game.time,
             venue: game.venue,
+            scorer: scorer,
             results: getResults()
         });
 

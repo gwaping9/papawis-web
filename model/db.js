@@ -56,7 +56,7 @@ var gameSchema = new mongoose.Schema({
     awayScore: Number,
     winner: {type: Number, ref: 'Team'},
     venue: String,
-    scorer: String,
+    scorer: {type: Number, ref: 'Team'},
     completed: String
 });
 
